@@ -96,3 +96,28 @@ class GridWorld:
                 line = ""
         print(line)
         print("----------------------------")
+env= GridWorld()
+policy = env.getRandomPolicy()
+# policy = {(0, 0): 'R', (0, 1): 'R', (0, 2): 'D', (0, 3): 'L', (1, 0): 'U', (1, 1): 'R', (1, 2): 'D', (1, 3): 'D'
+#     ,(2, 0): 'D', (2, 1): 'R', (2, 2): 'R', (2, 3): 'D', (3, 0): 'R', (3, 1): 'R', (3, 2): 'R'}
+# env.printPolicy(policy)
+
+alpha=0.1
+for i in range(2001):
+    state = env.reset()
+    stepCounts=0
+    while (not env.is_terminal(state)) and (stepCounts<20):
+        action, nextState, reward = env.move(state, policy,0.01)
+        stepCounts += 1
+        targetQ=reward
+        if not env.is_terminal(nextState):
+          targetQ=reward+(0.9*env.qTable[nextState][max(env.qTable[nextState], key=env.qTable[nextState].get)])
+        env.qTable[state][action]=env.qTable[state][action]+alpha*(targetQ-env.qTable[state][action])
+        state = nextState
+    for state in policy:
+      policy[state] = max(env.qTable[state], key=env.qTable[state].get)
+    if i%200==0:
+        print(f"\n\n\n step:{i}")
+        env.printPolicy(policy)
+        print("\n")
+print(f"exploited:{env.exploited}  explored:{env.explored}")
