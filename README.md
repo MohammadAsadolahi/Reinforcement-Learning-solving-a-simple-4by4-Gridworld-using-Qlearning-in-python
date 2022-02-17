@@ -4,7 +4,7 @@ solving a simple 4*4 Gridworld almost similar to openAI gym FrozenLake using Qle
 WRITTEN BY MOHAMMAD ASADOLAHI  
 Mohammad.E.Asadolahi@gmail.com  
 https://github.com/mohammadAsadolahi  
-**!!!! its not deep Q-learning!!! for deep Q-learning version search my github repo**   
+**!!!! its not Deep Q-learning implementation!!! for Deep Q-learning version search my github repo**   
 this program is using Reinfrocement learning to solve a 4*4 gridworld like frozen lake enviroment in open ai gym  
 the method used is policy iteration whitch is one of fundamental manners of Dynamic Programing  
 
