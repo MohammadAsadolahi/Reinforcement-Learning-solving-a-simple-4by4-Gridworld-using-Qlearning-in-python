@@ -116,7 +116,7 @@ for i in range(2001):
         state = nextState
     for state in policy:
       policy[state] = max(env.qTable[state], key=env.qTable[state].get)
-    if i%200==0:
+    if (i+1)%200==0:
         print(f"\n\n\n step:{i}")
         env.printPolicy(policy)
         print("\n")
