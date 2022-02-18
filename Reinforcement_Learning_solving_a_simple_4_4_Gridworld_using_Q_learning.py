@@ -103,7 +103,7 @@ policy = env.getRandomPolicy()
 # env.printPolicy(policy)
 
 alpha=0.1
-for i in range(2001):
+for i in range(2000):
     state = env.reset()
     stepCounts=0
     while (not env.is_terminal(state)) and (stepCounts<20):
