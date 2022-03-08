@@ -25,6 +25,8 @@ positive and negative rewards in each cell is stored in Gridworld  "Rewards" dic
 self.rewards = {(3, 3): 5, (1, 3): -2, (2, 1): -2, (3, 1): -2}  
 for example reward to go in (3,3) in enviroment witch is the goal will be +5 so agent gets +5 reward whenever go to cell (3,3)  
 the size of Gridworld can be changed in GridWorld calss by adding space actions  
+![Average Rewards](https://github.com/mohammadAsadolahi/Reinforcement_Learning_solving_a_simple_4_4_Gridworld_using_Qlearning/blob/main/Average%20Rewards.png)
+![Total Rewards](https://github.com/mohammadAsadolahi/Reinforcement_Learning_solving_a_simple_4_4_Gridworld_using_Qlearning/blob/main/Total%20Rewards.png)
 ***************************
 Algorithm Flow
 ***************************
