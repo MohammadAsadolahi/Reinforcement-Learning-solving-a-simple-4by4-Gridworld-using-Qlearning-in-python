@@ -5,6 +5,7 @@ WRITTEN BY MOHAMMAD ASADOLAHI
 Mohammad.E.Asadolahi@gmail.com  
 https://github.com/mohammadAsadolahi  
 **!!!! its not Deep Q-learning implementation!!! for Deep Q-learning version search my github repo**   
+![4*4 gridworld](https://github.com/MohammadAsadolahi/Reinforcement_Learning_solving_a_simple_4_4_Gridworld_using_SARSA-in-python/blob/main/a%20simple%204%20by%204%20Gridworld.png)
 this program is using Reinfrocement learning to solve a 4*4 gridworld like frozen lake enviroment in open ai gym  
 the method used is policy iteration whitch is one of fundamental manners of Dynamic Programing  
 
