@@ -1,6 +1,3 @@
-#WRITTEN BY MOHAMMAD ASADOLAHI mohammad.e.asadolahi@gmail.com
-#https://github.com/mohammadAsadolahi
-
 import numpy as np
 import copy
 import matplotlib.pyplot as plt
