@@ -8,12 +8,11 @@
 
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-3776ab?logo=python&logoColor=white)](https://python.org)
 [![NumPy](https://img.shields.io/badge/NumPy-1.21%2B-013243?logo=numpy&logoColor=white)](https://numpy.org)
-[![Matplotlib](https://img.shields.io/badge/Matplotlib-3.4%2B-11557c?logo=plotly&logoColor=white)](https://matplotlib.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-3.4%2B-11557c)](https://matplotlib.org)
 
 <br>
 
-*A clean, dependency-minimal implementation of the Q-Learning algorithm applied to a stochastic grid navigation problem — inspired by OpenAI Gym's FrozenLake-v1 environment. Built to demonstrate core reinforcement learning principles without the abstraction layers of deep learning frameworks.*
+*A clean, dependency-minimal implementation of the Q-Learning algorithm applied to a deterministic grid navigation problem — inspired by OpenAI Gym's FrozenLake-v1 environment. Built to demonstrate core reinforcement learning principles without the abstraction layers of deep learning frameworks.*
 
 </div>
 
@@ -164,7 +163,11 @@ With ε = 0.01, the agent exploits its learned policy **99%** of the time while 
 ├── Reinforcement_Learning_solving_a_simple_4_4_Gridworld_using_Q_learning.py   # Standalone script
 ├── Reinforcement_Learning_solving_a_simple_4_4_Gridworld_using_Q_learning.ipynb # Jupyter notebook
 ├── generate_visuals.py                                                          # Visualization suite
-├── assets/                                                                      # Generated figures
+├── a simple 4 by 4 Gridworld.png                                               # Grid diagram
+├── simple 4 by 4 Gridworld.png                                                 # Grid diagram (alt)
+├── Average Rewards.png                                                          # Average reward plot (script output)
+├── Total Rewards.png                                                            # Total reward plot (script output)
+├── assets/                                                                      # Advanced generated figures
 │   ├── gridworld_env.png
 │   ├── training_curves.png
 │   ├── optimal_policy.png
@@ -180,7 +183,7 @@ With ε = 0.01, the agent exploits its learned policy **99%** of the time while 
 
 ```bash
 # Clone the repository
-git clone https://github.com/Elktrn/Reinforcement-Learning-solving-a-simple-4by4-Gridworld-using-Qlearning-in-python.git
+git clone https://github.com/MohammadAsadolahi/Reinforcement-Learning-solving-a-simple-4by4-Gridworld-using-Qlearning-in-python.git
 cd Reinforcement-Learning-solving-a-simple-4by4-Gridworld-using-Qlearning-in-python
 
 # Install dependencies
@@ -199,7 +202,9 @@ python generate_visuals.py
 |----------------|-------|
 | Grid size / layout | `GridWorld.actions` dictionary — add or remove `(row, col)` entries |
 | Reward structure | `GridWorld.rewards` dictionary |
-| Hyperparameters (α, γ, ε) | Variables `alpha`, `gamma` / `0.9`, and `exploreRate` in the training loop |
+| Learning rate (α) | Variable `alpha` in the training loop |
+| Discount factor (γ) | Hardcoded `0.9` in the Q-update on the training loop (replace the literal) |
+| Exploration rate (ε) | Hardcoded `0.01` passed to `env.move()` in the training loop |
 | Number of episodes | `range(1, N)` in the training loop |
 
 ---
@@ -208,7 +213,7 @@ python generate_visuals.py
 
 This project implements one of the foundational algorithms in Reinforcement Learning. Q-Learning belongs to the family of **model-free, off-policy, temporal-difference** methods and was first introduced by [Watkins (1989)](https://link.springer.com/article/10.1007/BF00992698). It is the tabular precursor to Deep Q-Networks (DQN) — the algorithm that achieved human-level performance on Atari games [(Mnih et al., 2015)](https://www.nature.com/articles/nature14236).
 
-> **Note:** This is a *tabular* Q-Learning implementation — not Deep Q-Learning. For the deep learning variant using neural network function approximation, see my other repositories.
+> **Note:** This is a *tabular* Q-Learning implementation — not Deep Q-Learning (DQN), which uses neural network function approximation.
 
 ### Key Concepts Demonstrated
 
@@ -222,53 +227,20 @@ This project implements one of the foundational algorithms in Reinforcement Lear
 
 ---
 
+## Author
+
+**Mohammad Asadolahi** — Senior Agentic AI Engineer
+
+Focus: Agentic AI Architectures In The Wild
+
+---
+
 <div align="center">
 
 *Built with NumPy and Matplotlib — no frameworks, no abstractions, just the math.*
 
 </div>
-  step:1600  
-  -------------------------------- 
-     | R |  | R |  | D |  | L |   
-    ----------------------------  
-     | R |  | R |  | D |  | L |   
-    ----------------------------  
-     | D |  | R |  | R |  | D |   
-    ----------------------------  
-     | U |  | R |  | R |   
-    ----------------------------  
-      
-      
-      
-      
-      
-  --------------------------------  
-  step:1800  
-  -------------------------------- 
-     | R |  | R |  | D |  | L |   
-    ----------------------------  
-     | R |  | R |  | D |  | L |   
-    ----------------------------  
-     | D |  | R |  | R |  | D |   
-    ----------------------------  
-     | U |  | R |  | R |   
-    ----------------------------  
-      
-      
-      
-      
-      
-  --------------------------------  
-  step:1800  
-  -------------------------------- 
-     | R |  | R |  | D |  | L |   
-    ----------------------------  
-     | R |  | R |  | D |  | L |   
-    ----------------------------  
-     | D |  | R |  | R |  | D |   
-    ----------------------------  
-     | U |  | R |  | R |   
-    ----------------------------  
-      
-      
-    exploited:12482  explored:120  
+
+---
+
+<sub>This README was generated with AI assistance.</sub>
